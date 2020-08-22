@@ -1,14 +1,13 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
-const port = process.env.PORT || 3000
-
-console.log(port)
 
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
-
 const app = express()
+
+const port = process.env.PORT || 3000
+
 const publicPath = path.join(__dirname,'../public')
 const partialPath = path.join(__dirname,'../views/partials')
 
