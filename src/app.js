@@ -77,5 +77,5 @@ app.get('*',(req,res)=>{
 })
 
 app.listen(port,()=>{
-    console.log('Server Up');
+    console.log('Server Up'+ port);
 })
