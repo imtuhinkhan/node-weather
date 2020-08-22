@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
+const port = process.env.PORT || 3000
 
 const request = require('request')
 const geocode = require('./utils/geocode')
@@ -57,7 +58,7 @@ app.get('/weather',(req,res)=>{
                     response:body,
                     location,
                     address: req.query.address,
-                    text:body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. There is a ' + body.currently.precipProbability + '% chance of rain.'
+                    text:body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. There is a ' + Math.ceil(body.currently.precipProbability*100) + '% chance of rain.'
         
                 })
             })
@@ -75,6 +76,6 @@ app.get('*',(req,res)=>{
     });
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('Server Up');
 })
