@@ -1243,7 +1243,7 @@ form textarea {
     @media screen and (max-width: 990px) {
       .forecast-container .forecast {
         display: block;
-        width: 16.6667%;
+        width: 100%;
         float: left; } }
     .forecast-container .forecast.today {
       width: 420px; }
